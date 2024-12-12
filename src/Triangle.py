@@ -15,10 +15,10 @@ class Triangle(Figure):
             raise ValueError('Треугольника с такими сторонами не существует')
 
     @property
-    def get_area(self):
-        return sqrt((self.get_perimeter / 2 - self.side_a) * (self.get_perimeter / 2 - self.side_b) * (
-                self.get_perimeter / 2 - self.side_c))
+    def area(self):
+        return sqrt((self.perimeter / 2 - self.side_a) * (self.perimeter / 2 - self.side_b) * (
+                self.perimeter / 2 - self.side_c))
 
     @property
-    def get_perimeter(self):
+    def perimeter(self):
         return self.side_a + self.side_b + self.side_c

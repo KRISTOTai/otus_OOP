@@ -9,9 +9,9 @@ class Circle(Figure):
         super().__init__(side_a, side_a)
 
     @property
-    def get_area(self):
+    def area(self):
         return pi * self.side_a ** 2
 
     @property
-    def get_perimeter(self):
+    def perimeter(self):
         return self.side_a * 2 * pi
