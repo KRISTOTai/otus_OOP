@@ -1,8 +1,8 @@
-from src.Rectangle import Rectangle
+from src.Figure import Figure
 from math import sqrt
 
 
-class Triangle(Rectangle):
+class Triangle(Figure):
     """Вычисление площади и периметра у треугольника"""
 
     def __init__(self, side_a: int | float, side_b: int | float, side_c: int | float):

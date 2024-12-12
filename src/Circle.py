@@ -1,8 +1,8 @@
-from src.Rectangle import Rectangle
 from math import pi
+from src.Figure import Figure
 
 
-class Circle(Rectangle):
+class Circle(Figure):
     """Вычисление площади и длины дуги круга"""
 
     def __init__(self, side_a: int | float):
