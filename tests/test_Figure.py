@@ -5,6 +5,10 @@ from src.Circle import Circle
 from src.Triangle import Triangle
 
 
+class Negative:
+    pass
+
+
 @pytest.mark.parametrize(("side_a", "side_b"), [(7, 28), (3.12, 12.48)],
                          ids=['integer', 'float'])
 def test_square_rectangle_add_area(side_a, side_b):
@@ -25,3 +29,15 @@ def test_triangle_circle_add_area(side_a, side_b, side_c):
     circle_area = c.area
     print(f'Сумма площадей равна: {triangle_area + circle_area}')
     assert t.add_area(c) == (triangle_area + circle_area), f'Расчет суммы площадей отличается от заданного значения'
+
+
+def test_sides_negative():
+    with pytest.raises(ValueError, match='Диапазон атрибутов должен быть > 0'):
+        r = Rectangle(0, -2)
+
+
+def test_figure_negative():
+    with pytest.raises(ValueError):
+        c = Circle(5)
+        n = Negative()
+        c.add_area(n)

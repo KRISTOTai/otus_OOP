@@ -18,3 +18,8 @@ def test_triangle_area(side_a, side_b, side_c, area):
     t = Triangle(side_a, side_b, side_c)
     print(f'Площадь треугольника равна : {t.area}')
     assert t.area == area, f'Расчет площади треугольника отличается от заданного значения'
+
+
+@pytest.mark.xfail(reason='Треугольника с такими сторонами не существует', raises=ValueError)
+def test_triangle_sides_negative():
+    t = Triangle(-2, 0, 5)
