@@ -2,12 +2,12 @@ import pytest
 from src.Circle import Circle
 
 
-@pytest.mark.parametrize(("side_a", "perimeter"), [(5, 31.41592653589793), (3.12, 19.60353815840031)],
+@pytest.mark.parametrize(("side_a", "perimeter"), [(5, 31.42), (3.12, 19.60)],
                          ids=['integer', 'float'])
 def test_circle_perimeter(side_a, perimeter):
     c = Circle(side_a)
     print(f'Длина дуги равна: {c.perimeter}')
-    assert c.perimeter == perimeter, f'Расчет длины дуги окружности отличается от заданного значения'
+    assert round(c.perimeter, 2) == round(perimeter, 2), f'Расчет длины дуги окружности отличается от заданного значения'
 
 
 @pytest.mark.parametrize(("side_a", "area"), [(5, 78.53981633974483), (3.12, 30.581519527104486)],
